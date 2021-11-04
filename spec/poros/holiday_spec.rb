@@ -8,5 +8,6 @@ RSpec.describe 'holiday poro' do
     expect(holiday.date).to eq("2021-11-26")
     expect(holiday.local_name).to eq("National Mariah Carey Day")
     expect(holiday.name).to eq("Ear Muff Day")
+    expect(holiday.id).to eq("20211126")
   end
 end
