@@ -12,6 +12,7 @@ class Holiday
   end
 
   def id
-    @date.tr('-', '')
+    # @date.tr('-', '')
+    @date.split("-").join("")
   end
 end
