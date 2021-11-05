@@ -1,12 +1,18 @@
 class Holiday
 
   attr_reader :date,
-              :localName,
-              :name
-              
+              :local_name,
+              :name,
+              :id
+
   def initialize(data)
     @date = data[:date]
-    @localName = data[:localName]
+    @local_name = data[:localName]
     @name = data[:name]
+  end
+
+  def id
+    # @date.tr('-', '')
+    @date.split("-").join("")
   end
 end
