@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :holidays, only: [:index]
       resources :forecast, only: [:index]
+      resources :parents
     end
   end
 end
