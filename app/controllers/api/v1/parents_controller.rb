@@ -1,5 +1,5 @@
 class Api::V1::ParentsController < ApplicationController
-  before_action :find_parent, only: [:show]
+  before_action :find_parent, only: [:show, :update]
 
   def index
     parents = Parent.all
@@ -13,6 +13,11 @@ class Api::V1::ParentsController < ApplicationController
   def create
     parent = Parent.create!(parent_params)
     json_response(ParentSerializer.new(parent), :created)
+  end
+
+  def update
+    @parent.update!(parent_params)
+    json_response(ParentSerializer.new(@parent), :accepted)
   end
 
   private
