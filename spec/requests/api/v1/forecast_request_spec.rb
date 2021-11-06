@@ -9,7 +9,7 @@ RSpec.describe 'Forecast API' do
       expect(response).to be_successful
 
       forecast = JSON.parse(response.body, symbolize_names: true)
-      require "pry"; binding.pry
+
       expect(forecast[:data].count).to eq(5)
       expect(forecast[:data]).to have_key(:weather)
       expect(forecast[:data][:main]).to have_key(:temp)

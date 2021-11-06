@@ -9,4 +9,9 @@ class ApplicationController < ActionController::API
   def render_bad_request(message)
     render json: { error: message }, status: :bad_request
   end
+
+  def render_not_found(message)
+    json_response({ error: message }, :not_found)
+  end
+
 end
