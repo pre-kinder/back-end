@@ -5,6 +5,11 @@ class Api::V1::ClassroomsController < ApplicationController
     json_response(ClassroomSerializer.new(classroom), :created)
   end
 
+  def show
+    classroom = Classroom.find(params[:id])
+    json_response(ClassroomSerializer.new(classroom))
+  end
+
   private
 
   def classroom_params
