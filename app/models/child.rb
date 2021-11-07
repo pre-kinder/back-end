@@ -6,4 +6,6 @@ class Child < ApplicationRecord
   validates :last_name, presence: true
   validates :birthday, presence: true
   validates :attendance_status, presence: true
+  validates :classroom_id, presence: true
+  validates :parent_id, presence: true
 end

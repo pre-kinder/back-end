@@ -1,19 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe 'Children Api requests' do
-  describe 'GET /parents/:id/children' do
-    context 'parent exists and has chidlren' do
-      it 'returns a list of all parent children' do
-        parent = create(:parent)
-        all_children = create_list(:child, 3, parent: parent)
-
-        get "/api/v1/parents/#{parent.id}/children"
+  describe 'GET /classrooms/:id/children' do
+    context 'classroom exists and has children' do
+      it 'returns a list of all classroom children' do
+        classroom = create(:classroom)
+        all_children = create_list(:child, 20, classroom: classroom)
+        get "/api/v1/classrooms/#{classroom.id}/children"
 
         expect(response).to have_http_status(200)
 
         children = JSON.parse(response.body, symbolize_names: true)
 
-        expect(children[:data].count).to eq(3)
+        expect(children[:data].count).to eq(20)
 
         children[:data].each do |child|
           expect(child).to have_key(:id)
@@ -34,20 +33,17 @@ RSpec.describe 'Children Api requests' do
           expect(child[:attributes]).to have_key(:attendance_status)
           expect(child[:attributes][:attendance_status]).to be_an(Integer)
 
-          expect(child[:attributes]).to have_key(:parent_id)
-          expect(child[:attributes][:parent_id]).to be_an(Integer)
-
           expect(child[:attributes]).to have_key(:classroom_id)
           expect(child[:attributes][:classroom_id]).to be_an(Integer)
         end
       end
     end
 
-    context 'parent exists and has NO chidlren' do
+    context 'classroom exists and has NO children' do
        it 'returns a 200 status code and data is an empty array' do
-         parent = create(:parent)
+         classroom = create(:classroom)
 
-         get "/api/v1/parents/#{parent.id}/children"
+         get "/api/v1/classrooms/#{classroom.id}/children"
 
          expect(response).to have_http_status(200)
 
@@ -57,13 +53,13 @@ RSpec.describe 'Children Api requests' do
        end
     end
 
-    context 'parent does NOT exist' do
+    context 'classroom does NOT exist' do
       it 'returns an error message and 404 status code' do
 
-        get "/api/v1/parents/string/children"
+        get "/api/v1/classrooms/string/children"
 
         expect(response).to have_http_status(404)
-        expect(response.body).to match(/Couldn't find Parent/)
+        expect(response.body).to match(/Couldn't find Classroom/)
       end
     end
   end

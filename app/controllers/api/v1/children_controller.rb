@@ -1,8 +1,8 @@
 class Api::V1::ChildrenController < ApplicationController
 
   def index
-    parent = Parent.find(params[:id])
-    children = parent.children
+    classroom = Classroom.find(params[:classroom_id])
+    children = classroom.children
     json_response(ChildrenSerializer.new(children))
   end
 end
