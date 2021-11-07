@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :holidays, only: [:index]
       resources :forecast, only: [:index]
       resources :parents
+      
+      get '/parents/:id/children', to: 'parents/children#index'
     end
   end
 end

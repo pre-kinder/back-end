@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :teacher do
-    classroom { nil }
-    first_name { "MyString" }
-    last_name { "MyString" }
-    email { "MyString" }
-    address { "MyString" }
-    phone_number { "MyString" }
-    google_image_url { "MyString" }
-    google_id { "MyString" }
+    classroom
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    email { Faker::Internet.email }
+    address { Faker::Address.full_address }
+    phone_number { Faker::PhoneNumber.cell_phone }
+    google_image_url { Faker::Avatar.image }
+    google_id { Faker::Alphanumeric.alphanumeric(number: 21) }
   end
 end
