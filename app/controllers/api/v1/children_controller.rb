@@ -1,4 +1,4 @@
-class Api::V1::Parents::ChildrenController < ApplicationController
+class Api::V1::ChildrenController < ApplicationController
 
   def index
     parent = Parent.find(params[:id])
