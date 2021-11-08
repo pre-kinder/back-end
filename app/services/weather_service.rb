@@ -9,7 +9,7 @@ class WeatherService < BaseService
     parse_json(response)
   end
 
-  def self.get_5_day_forecast_data(city)
+  def self.get_3_day_forecast_data(city)
     request_api("/v1/forecast.json?q=#{city}")
   end
 end
