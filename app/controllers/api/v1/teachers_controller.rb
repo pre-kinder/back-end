@@ -14,14 +14,14 @@ class Api::V1::TeachersController < ApplicationController
   end
 
   def create
-    teacher = Teacher.create!(teacher_params)
-    json_response(TeacherSerializer.new(teacher), :created)
-    # teacher = Teacher.new(teacher_params)
-    # if teacher.save
-    #   json_response(TeacherSerializer.new(teacher), status: 201)
-    # else
-    #   render_invalid_params('invalid parameters provided')
-    # end
+    # teacher = Teacher.create!(teacher_params)
+    # json_response(TeacherSerializer.new(teacher), :created)
+    teacher = Teacher.new(teacher_params)
+    if teacher.save
+      render json: TeacherSerializer.new(teacher), status: 201
+    else
+      render_invalid_params('invalid parameters provided')
+    end
   end
 
   def update

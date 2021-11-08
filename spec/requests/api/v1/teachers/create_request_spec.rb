@@ -40,4 +40,14 @@ RSpec.describe 'Teachers create endpoint' do
     expect(teacher[:data][:attributes]).to have_key(:google_id)
     expect(teacher[:data][:attributes][:google_id]).to be_a(String)
   end
+
+  it 'cannot create a teacher if attributes are missing' do
+    classroom = create(:classroom)
+    teacher_params = { classroom_id: "#{classroom.id}", first_name: "Gladys", last_name: "Ernstein", email: "gernstein@hotmail.com", address: "123 Main Street", phone_number: "123-345-5678", google_id: "457"}
+
+    post "/api/v1/classrooms/#{classroom.id}/teachers", params: { teacher: teacher_params }
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+  end
 end
