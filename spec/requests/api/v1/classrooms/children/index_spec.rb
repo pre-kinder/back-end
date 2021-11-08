@@ -6,6 +6,7 @@ RSpec.describe 'Children Api requests' do
       it 'returns a list of all classroom children' do
         classroom = create(:classroom)
         all_children = create_list(:child, 20, classroom: classroom)
+        
         get "/api/v1/classrooms/#{classroom.id}/children"
 
         expect(response).to have_http_status(200)
