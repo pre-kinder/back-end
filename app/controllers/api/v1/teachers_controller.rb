@@ -10,6 +10,8 @@ class Api::V1::TeachersController < ApplicationController
     teacher = Teacher.find_by(id: params[:id])
     if teacher
       render json: TeacherSerializer.new(teacher)
+    else
+      render_invalid_params('invalid parameters provided')
     end
   end
 
