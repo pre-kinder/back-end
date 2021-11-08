@@ -2,7 +2,7 @@ class WeatherService < BaseService
   def self.request_api(path)
     response = conn('https://api.weatherapi.com').get(path) do |f|
       f.params['key'] = ENV['weather_key']
-      f.params['days'] = '5'
+      f.params['days'] = '3'
       f.params['aqi'] = 'yes'
       f.params['alerts'] = 'yes'
     end
