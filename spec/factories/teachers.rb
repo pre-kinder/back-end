@@ -8,6 +8,5 @@ FactoryBot.define do
     phone_number { Faker::PhoneNumber }
     google_image_url { Faker::LoremFlickr.image }
     google_id { Faker::Internet.username(specifier: 5..8) }
-
   end
 end

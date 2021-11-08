@@ -6,7 +6,6 @@ class Api::V1::TeachersController < ApplicationController
   end
 
   def show
-    # json_response(TeachersSerializer.new(@teacher))
     teacher = Teacher.find_by(id: params[:id])
     if teacher
       render json: TeacherSerializer.new(teacher)
@@ -16,8 +15,6 @@ class Api::V1::TeachersController < ApplicationController
   end
 
   def create
-    # teacher = Teacher.create!(teacher_params)
-    # json_response(TeacherSerializer.new(teacher), :created)
     teacher = Teacher.new(teacher_params)
     if teacher.save
       render json: TeacherSerializer.new(teacher), status: 201
@@ -27,8 +24,6 @@ class Api::V1::TeachersController < ApplicationController
   end
 
   def update
-    # @teacher.update!(teacher_params)
-    # json_response(TeacherSerializer.new(@teacher), :accepted)
     teacher = Teacher.find_by(id: params[:id])
     if teacher && teacher.update(teacher_params)
       render json: TeacherSerializer.new(teacher)
