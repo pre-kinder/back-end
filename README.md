@@ -60,7 +60,7 @@
   * Fork this repository
   * From the command line, install gems and set up your DB:
       * `bundle install && bundle update`
-      * `rails db:{create,migrate}`
+      * `rails db:{create,migrate,seed}`
   * Run the test suite with `bundle exec rspec -fd`
   * Run your development server with `rails s` to see the app in action.
 
@@ -81,27 +81,12 @@
   * Database creation
       ```bash
       $ rails db:{drop,create,migrate,seed}
-      Created database 'frontend_development'
-      Created database 'frontend_test'
+      Created database 'back-end_development'
+      Created database 'back-end_test'
       ```
 
-  * [OAuth setup](https://github.com/zquestz/omniauth-google-oauth2#installation)
-      ```bash
-      #Gemfile
-        gem 'omniauth-google-oauth2'
-        gem 'omniauth-rails_csrf_protection'
-      ```
       ```bash
       $ bundle install
-      ```
-
-  * [Google API setup](https://console.developers.google.com)
-      ```bash
-      Visit https://console.developers.google.com
-      - Select your project
-        - From the Credentials section:
-          - Select the "OAuth consent screen" tab on top, and provide an 'EMAIL ADDRESS' and a 'PRODUCT NAME'
-          - Wait 10 minutes for changes to take effect.
       ```
 
   * [API key configuration](https://github.com/laserlemon/figaro)
@@ -111,17 +96,12 @@
       Add your credentials & API keys to `config/application.yml`:
 
       ```yml
-      #Frontend Repo:
-      GOOGLE_CLIENT_ID: <your client id>
-      GOOGLE_CLIENT_SECRET: <your client secret>
-      ```
+      #Backend Repo:
       1st API: go to [Weather API](https://www.weatherapi.com/signup.aspx) to request an API key<br>
       2nd API: at [Nager.Date API](https://date.nager.at/), no key needed<br>
 
-      ```yml
-    #Backend Repo:
-    key: '<your api key>'
-    ```
+      key: '<your api key>'
+      ```
 
   * How to run the test suite
       ```bash
