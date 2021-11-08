@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do
       resources :holidays, only: [:index]
@@ -9,9 +8,9 @@ Rails.application.routes.draw do
       end
 
       resources :classrooms, only: [:create, :show] do
-        # resources :events, only: [:index]
         resources :children
-        # resources :teachers, only: [:index]
+        resources :teachers
+        resources :events
       end
     end
   end
