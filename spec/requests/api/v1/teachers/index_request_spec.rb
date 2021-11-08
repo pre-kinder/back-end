@@ -4,7 +4,6 @@ RSpec.describe 'Teachers index endpoint' do
   it 'returns a list of teachers in a classroom' do
 
     classroom = create(:classroom, :with_teachers)
-    classroom_2 = create(:classroom, :with_teachers)
 
     get "/api/v1/classrooms/#{classroom.id}/teachers"
 
@@ -42,5 +41,17 @@ RSpec.describe 'Teachers index endpoint' do
         expect(teacher[:attributes][:google_id]).to be_a(String)
       end
     end
+  end
+
+  it 'returns an empty array if there are no teachers' do
+    classroom = create(:classroom)
+
+    get "/api/v1/classrooms/#{classroom.id}/teachers"
+
+    teachers = JSON.parse(response.body, symbolize_names: true)
+
+    expect(teachers).to have_key(:data)
+    expect(teachers[:data]).to be_an(Array)
+    expect(teachers[:data]).to eq([])
   end
 end
