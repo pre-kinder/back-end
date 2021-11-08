@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Parents Api requests' do
-  describe 'GET /parents/:id' do
+  describe 'GET /api/v1/parents/:id' do
     context 'parent exists' do
       it 'sends a specific parent details' do
         parent_1 = create(:parent)
