@@ -14,7 +14,6 @@ RSpec.describe 'Teachers create endpoint' do
   end
 
   it 'cannot update a teacher that does not exist' do
-
     patch "/api/v1/classrooms/2/teachers/2", params: { teacher: {first_name: "Steve"} }
 
     expect(response).to_not be_successful

@@ -37,11 +37,10 @@ class Api::V1::TeachersController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @teacher.destroy
-  #   head :no_content
-  # end
-  #
+  def destroy
+    Teacher.delete(params[:id])
+  end
+
   private
 
   def teacher_params
