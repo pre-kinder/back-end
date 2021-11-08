@@ -12,7 +12,7 @@ class Api::V1::TeachersController < ApplicationController
       render json: TeacherSerializer.new(teacher)
     end
   end
-  #
+
   def create
     teacher = Teacher.create!(teacher_params)
     json_response(TeacherSerializer.new(teacher), :created)
@@ -29,7 +29,9 @@ class Api::V1::TeachersController < ApplicationController
     # json_response(TeacherSerializer.new(@teacher), :accepted)
     teacher = Teacher.find_by(id: params[:id])
     if teacher && teacher.update(teacher_params)
-      render json: TeacherSerializer.new(item)
+      render json: TeacherSerializer.new(teacher)
+    else
+      render_invalid_params('invalid parameters provided')
     end
   end
 
