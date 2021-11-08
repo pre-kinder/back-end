@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe 'Teachers show endpoint' do
-  it 'returns one teacher based on an id' do
+RSpec.describe 'Teachers create endpoint' do
+  it 'can create a teacher' do
+    classroom = create(:classroom)
+    teacher_params = { classroom_id: "#{classroom.id}", first_name: "Gladys", last_name: "Ernstein", email: "gernstein@hotmail.com", address: "123 Main Street", phone_number: "123-345-5678", google_image_url: "www.gladysiscool.biz", google_id: "457"}
 
-    classroom = create(:classroom, :with_teachers)
-    teacher_1 = classroom.teachers.first
+    post "/api/v1/classrooms/#{classroom.id}/teachers", params: { teacher: teacher_params }
 
-    get "/api/v1/classrooms/#{classroom.id}/teachers/#{teacher_1.id}"
     expect(response).to be_successful
+    expect(response.status).to eq(201)
 
     teacher = JSON.parse(response.body, symbolize_names: true)
 
@@ -15,6 +16,7 @@ RSpec.describe 'Teachers show endpoint' do
     expect(teacher[:data]).to be_a(Hash)
 
     expect(teacher[:data][:id]).to be_a(String)
+    expect(teacher[:data][:type]).to be_a(String)
     expect(teacher[:data][:attributes]).to be_a(Hash)
 
     expect(teacher[:data][:attributes]).to have_key(:first_name)
@@ -37,6 +39,5 @@ RSpec.describe 'Teachers show endpoint' do
 
     expect(teacher[:data][:attributes]).to have_key(:google_id)
     expect(teacher[:data][:attributes][:google_id]).to be_a(String)
-
   end
 end
