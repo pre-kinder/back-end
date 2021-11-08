@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'Children Api requests' do
   describe 'GET /parents/:id/children' do
-    context 'parent exists and has chidlren' do
+    context 'parent exists and has children' do
       it 'returns a list of all parent children' do
         parent = create(:parent)
         all_children = create_list(:child, 3, parent: parent)
 
         get "/api/v1/parents/#{parent.id}/children"
-
+        
         expect(response).to have_http_status(200)
 
         children = JSON.parse(response.body, symbolize_names: true)
@@ -43,7 +43,7 @@ RSpec.describe 'Children Api requests' do
       end
     end
 
-    context 'parent exists and has NO chidlren' do
+    context 'parent exists and has NO children' do
        it 'returns a 200 status code and data is an empty array' do
          parent = create(:parent)
 
