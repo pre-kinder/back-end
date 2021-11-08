@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :teacher do
-    classroom { nil }
+    classroom { Faker::Games::Pokemon.location }
     first_name { Faker::Artist.name }
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
@@ -8,5 +8,6 @@ FactoryBot.define do
     phone_number { Faker::PhoneNumber }
     google_image_url { Faker::LoremFlickr.image }
     google_id { Faker::Internet.username(specifier: 5..8) }
+
   end
 end
