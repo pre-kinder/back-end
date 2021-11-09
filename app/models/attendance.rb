@@ -4,7 +4,7 @@ class Attendance < ApplicationRecord
 
 
   validates :date, presence: true
-  enum status: [:present, :absent, :tardy]
+  enum status: [:present, :absent, :late, :sick]
   # validates :classroom_id, presence: true
   # validates :parent_id, presence: true
 end

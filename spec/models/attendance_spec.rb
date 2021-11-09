@@ -11,6 +11,7 @@ RSpec.describe Attendance, type: :model do
     # it { should validate_presence_of(:status) }
     it { should allow_value(:present).for(:status) }
     it { should allow_value(:absent).for(:status) }
-    it { should allow_value(:tardy).for(:status) }
+    it { should allow_value(:late).for(:status) }
+    it { should allow_value(:sick).for(:status) }
   end
 end
