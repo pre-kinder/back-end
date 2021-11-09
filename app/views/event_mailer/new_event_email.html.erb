@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Upcoming Event!</p>
+    <p>
+      <table class="table table-borderless">
+        <thead>
+     <tr>
+       <th scope="col">Title</th>
+       <th scope="col">Description</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <th scope="row">Title</th>
+       <td><%= @event.title %> <br>
+         When: <%= @event.date %>, <%= @event.time %></td>
+     </tr>
+     <tr>
+       <th scope="row">Description</th>
+       <td><%= @event.description %></td>
+     </tr>
+     <tr>
+   </tbody>
+   </table>
+  </body>
+</html>
