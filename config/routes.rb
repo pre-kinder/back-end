@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         resources :children
         resources :teachers
         resources :events
+        resources :attendances
       end
     end
   end
