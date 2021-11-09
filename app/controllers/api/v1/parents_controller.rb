@@ -11,8 +11,14 @@ class Api::V1::ParentsController < ApplicationController
   end
 
   def create
-    parent = Parent.create!(parent_params)
-    json_response(ParentSerializer.new(parent), :created)
+    @parent = Parent.new(parent_params)
+
+    if @parent.save
+      ParentMailer.with(parent: @parent).sign_up_email.deliver
+      json_response(ParentSerializer.new(@parent), :created)
+    else
+      render json: @parent.errors, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -32,6 +38,6 @@ class Api::V1::ParentsController < ApplicationController
   end
 
   def parent_params
-    params.require(:parent).permit(:first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
+    params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
   end
 end
