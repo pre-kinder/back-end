@@ -1,8 +1,9 @@
 FactoryBot.define do
   factory :event do
     classroom
-    title { "MyString" }
-    date { "2021-11-05" }
-    time { "2021-11-05 16:18:19" }
+    title { Faker::Lorem.words }
+    description { Faker::Lorem.paragraphs(number: 1)}
+    date { Faker::Date.in_date_period }
+    time { Faker::Time.forward(days: 5,  period: :evening, format: :long) }
   end
 end
