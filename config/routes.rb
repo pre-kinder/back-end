@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :holidays, only: [:index]
       resources :forecast, only: [:index]
+      resources :events
       resources :parents do
         get '/children', to: 'parents#children'
       end

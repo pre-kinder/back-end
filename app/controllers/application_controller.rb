@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::API
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
   def json_response(object, status = :ok)
     render json: object, status: status
   end
-
-  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-  rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
   def render_bad_request(message)
     render json: { error: message }, status: :bad_request
