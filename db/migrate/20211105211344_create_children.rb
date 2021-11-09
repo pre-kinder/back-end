@@ -4,7 +4,6 @@ class CreateChildren < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.date :birthday
-      t.integer :attendance_status
       t.references :parent, foreign_key: true
       t.references :classroom, foreign_key: true
 

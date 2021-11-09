@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_11_09_085253) do
     t.string "first_name"
     t.string "last_name"
     t.date "birthday"
-    t.integer "attendance_status"
     t.bigint "parent_id"
     t.bigint "classroom_id"
     t.datetime "created_at", null: false
@@ -51,7 +50,6 @@ ActiveRecord::Schema.define(version: 2021_11_09_085253) do
     t.time "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "description"
     t.index ["classroom_id"], name: "index_events_on_classroom_id"
   end
 
