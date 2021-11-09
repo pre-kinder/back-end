@@ -65,7 +65,7 @@ Rails.application.configure do
   #SMTP settings for gmail
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
-    # :domain => 'mail.google.com',
+    :domain => 'heroku.com',
     :port => 587,
     :user_name => "notification.prekinder",
     :password => ENV['GOOGLE_PASSWORD'],
