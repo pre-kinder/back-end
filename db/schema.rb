@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_11_05_211819) do
   create_table "events", force: :cascade do |t|
     t.bigint "classroom_id"
     t.string "title"
+    t.text "description"
     t.date "date"
     t.time "time"
     t.datetime "created_at", null: false
