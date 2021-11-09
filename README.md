@@ -153,7 +153,7 @@
 
 ## Database Schema
 
-<img src="https://user-images.githubusercontent.com/73204318/140601834-d38d6f8c-b7ca-49bb-be60-204af99dff5e.png">
+<img src="https://user-images.githubusercontent.com/73204318/140886535-bf4918b4-b9d9-4ba1-9878-176684321523.png">
 
 
 ## API Endpoints
@@ -186,7 +186,7 @@ The following section displays the api endpoints.
 > PATH PARAMETERS- :id (integer) REQUIRED
 
 - DELETE /api/v1/parents/:id
-> Remove a chore from a household --
+> Remove a parent by id --
 > PATH PARAMETERS- :id (integer) REQUIRED
 
 - POST /api/v1/parents
