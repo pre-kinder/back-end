@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get '/children', to: 'parents#children'
       end
 
+
       resources :classrooms, only: [:create, :show] do
         resources :children
         resources :teachers
