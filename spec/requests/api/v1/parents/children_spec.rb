@@ -8,7 +8,7 @@ RSpec.describe 'Children Api requests' do
         all_children = create_list(:child, 3, parent: parent)
 
         get "/api/v1/parents/#{parent.id}/children"
-        
+
         expect(response).to have_http_status(200)
 
         children = JSON.parse(response.body, symbolize_names: true)
@@ -30,9 +30,6 @@ RSpec.describe 'Children Api requests' do
 
           expect(child[:attributes]).to have_key(:birthday)
           expect(child[:attributes][:birthday]).to be_an(String)
-
-          expect(child[:attributes]).to have_key(:attendance_status)
-          expect(child[:attributes][:attendance_status]).to be_an(Integer)
 
           expect(child[:attributes]).to have_key(:parent_id)
           expect(child[:attributes][:parent_id]).to be_an(Integer)

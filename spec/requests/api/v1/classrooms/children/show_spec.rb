@@ -31,9 +31,6 @@ RSpec.describe 'Classroom children Api requests' do
         expect(child[:data][:attributes]).to have_key(:birthday)
         expect(child[:data][:attributes][:birthday]).to be_an(String)
 
-        expect(child[:data][:attributes]).to have_key(:attendance_status)
-        expect(child[:data][:attributes][:attendance_status]).to be_an(Integer)
-
         expect(child[:data][:attributes]).to have_key(:classroom_id)
         expect(child[:data][:attributes][:classroom_id]).to be_an(Integer)
       end
