@@ -48,6 +48,6 @@ class Api::V1::ParentsController < ApplicationController
   end
 
   def parent_params
-    params.require(:parent).permit(:first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
+    params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
   end
 end
