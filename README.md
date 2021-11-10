@@ -7,7 +7,7 @@
 [![Forks][forks-shield]][forks-url]
 ![Build Badge][build-badge]
 
-<img src="https://user-images.githubusercontent.com/73204318/140602099-d4a3934e-db21-485e-9253-4402733b8c3d.png"><br>
+<img src="https://user-images.githubusercontent.com/73204318/141081548-a93d278d-72ef-4532-9db7-46da0d953c3d.png"><br>
 <br>
 
   An app that makes Pre-K organizing -- child's play.
