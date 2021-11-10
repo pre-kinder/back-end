@@ -10,7 +10,15 @@ Rails.application.routes.draw do
       resources :teachers
       resources :children
       resources :events
-      resources :classrooms, only: [:index, :create, :show]
+      resources :classrooms, only: [:index, :create, :show] do
+        get '/children', to: 'classrooms/children#index'
+        get '/teachers', to: 'classrooms/teachers#index'
+        get '/events', to: 'classrooms/events#index'
+
+        # get '/children', to: 'classrooms/children#index'
+        # get '/teachers', to: 'classrooms#teachers'
+        # get '/events', to: 'classrooms#events'
+      end
       resources :attendances, only: [:index, :create, :show]
     end
   end

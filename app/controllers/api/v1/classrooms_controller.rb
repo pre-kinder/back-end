@@ -10,6 +10,14 @@ class Api::V1::ClassroomsController < ApplicationController
     json_response(ClassroomSerializer.new(classroom))
   end
 
+  # def children
+  #   class = Classroom.find(params[:id])
+  #   students = class.children
+  #   json_response(ChildrenSerializer.new(students))
+  # end
+
+
+
   private
 
   def classroom_params
