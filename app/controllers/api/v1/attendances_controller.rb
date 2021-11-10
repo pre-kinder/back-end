@@ -1,9 +1,9 @@
 class Api::V1::AttendancesController < ApplicationController
-  before_action :find_classroom, :find_child
+  # before_action :find_classroom, :find_child
   before_action :find_attendance, only: [:show, :update, :destroy]
 
   def index
-    attendances = @classroom.attendances
+    attendances = Attendance.all
     json_response(AttendancesSerializer.new(attendances))
   end
 
@@ -12,14 +12,14 @@ class Api::V1::AttendancesController < ApplicationController
   end
 
   def create
-    attendance = @classroom.attendances.create!(attendance_params)
+    attendance = Attendance.create!(attendance_params)
     json_response(AttendancesSerializer.new(attendance), :created)
   end
 
-  def update
-    @attendance.update!(attendance_params)
-    json_response(AttendancesSerializer.new(@attendance), :accepted)
-  end
+  # def update
+  #   @attendance.update!(attendance_params)
+  #   json_response(AttendancesSerializer.new(@attendance), :accepted)
+  # end
 
   def destroy
     @attendance.destroy
@@ -28,6 +28,7 @@ class Api::V1::AttendancesController < ApplicationController
 
 
   private
+  
   def find_child
     @child = Child.find(params[:child_id])
   end
@@ -37,7 +38,7 @@ class Api::V1::AttendancesController < ApplicationController
   end
 
   def find_attendance
-    @attendance = @classroom.attendances.find(params[:id])
+    @attendance = Attendance.find(params[:id])
   end
 
   def attendance_params

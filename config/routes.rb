@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :children
       resources :events
       resources :classrooms, only: [:index, :create, :show]
+      resources :attendances, only: [:index, :create, :show]
     end
   end
 end
