@@ -1,1 +1,1 @@
-Pusher.key = ENV['pusher_key']
+Pusher.key = ENV['weather_key']
