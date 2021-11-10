@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
-    events = Event.all
-    json_response(EventSerializer.new(events))
+    @events = Event.all
+    json_response(EventSerializer.new(@events))
   end
 
   def show

@@ -1,5 +1,5 @@
 class Api::V1::ParentsController < ApplicationController
-  before_action :find_parent, only: [:show, :update, :destroy]
+  # before_action :find_parent, only: [:show, :update, :destroy]
 
   def index
     parents = Parent.all
@@ -7,6 +7,7 @@ class Api::V1::ParentsController < ApplicationController
   end
 
   def show
+    @parent = Parent.find(params[:id])
     json_response(ParentSerializer.new(@parent))
   end
 
@@ -22,11 +23,13 @@ class Api::V1::ParentsController < ApplicationController
   end
 
   def update
+    @parent = Parent.find(params[:id])
     @parent.update!(parent_params)
     json_response(ParentSerializer.new(@parent), :accepted)
   end
 
   def destroy
+    @parent = Parent.find(params[:id])
     @parent.destroy
     head :no_content
   end
@@ -45,6 +48,6 @@ class Api::V1::ParentsController < ApplicationController
   end
 
   def parent_params
-    params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
+    params.require(:parent).permit(:first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
   end
 end

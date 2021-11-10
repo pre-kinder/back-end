@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Teachers index endpoint' do
   it 'returns a list of teachers in a classroom' do
-    classroom = create(:classroom, :with_teachers)
+    create(:classroom, :with_teachers)
 
-    get "/api/v1/classrooms/#{classroom.id}/teachers"
+    get "/api/v1/teachers"
 
     expect(response).to be_successful
 
@@ -43,9 +43,9 @@ RSpec.describe 'Teachers index endpoint' do
   end
 
   it 'returns an empty array if there are no teachers' do
-    classroom = create(:classroom)
+    create(:classroom)
 
-    get "/api/v1/classrooms/#{classroom.id}/teachers"
+    get "/api/v1/teachers"
 
     teachers = JSON.parse(response.body, symbolize_names: true)
 
@@ -60,7 +60,7 @@ RSpec.describe 'Teachers index endpoint' do
     teacher_1 = classroom.teachers.first
     teacher_2 = classroom_2.teachers.first
 
-    get "/api/v1/classrooms/#{classroom.id}/teachers"
+    get "/api/v1/teachers"
 
     expect(response).to be_successful
 

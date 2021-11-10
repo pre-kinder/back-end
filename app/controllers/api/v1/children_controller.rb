@@ -1,9 +1,9 @@
 class Api::V1::ChildrenController < ApplicationController
-  before_action :find_classroom
+  # before_action :find_classroom
   before_action :find_child, only: [:show, :update, :destroy]
 
   def index
-    children = @classroom.children
+    children = Child.all
     json_response(ChildrenSerializer.new(children))
   end
 
@@ -12,7 +12,7 @@ class Api::V1::ChildrenController < ApplicationController
   end
 
   def create
-    child = @classroom.children.create!(child_params)
+    child = Child.create!(child_params)
     json_response(ChildrenSerializer.new(child), :created)
   end
 
@@ -34,7 +34,7 @@ class Api::V1::ChildrenController < ApplicationController
   end
 
   def find_child
-    @child = @classroom.children.find(params[:id])
+    @child = Child.find(params[:id])
   end
 
   def child_params
