@@ -5,7 +5,7 @@ RSpec.describe 'Teachers create endpoint' do
     classroom = create(:classroom)
     teacher_params = { classroom_id: "#{classroom.id}", first_name: "Gladys", last_name: "Ernstein", email: "gernstein@hotmail.com", address: "123 Main Street", phone_number: "123-345-5678", google_image_url: "www.gladysiscool.biz", google_id: "457"}
 
-    post "/api/v1/classrooms/#{classroom.id}/teachers", params: { teacher: teacher_params }
+    post "/api/v1/teachers", params: { teacher: teacher_params }
 
     expect(response).to be_successful
     expect(response.status).to eq(201)
@@ -45,7 +45,7 @@ RSpec.describe 'Teachers create endpoint' do
     classroom = create(:classroom)
     teacher_params = { classroom_id: "#{classroom.id}", first_name: "Gladys", last_name: "Ernstein", email: "gernstein@hotmail.com", address: "123 Main Street", phone_number: "123-345-5678", google_id: "457"}
 
-    post "/api/v1/classrooms/#{classroom.id}/teachers", params: { teacher: teacher_params }
+    post "/api/v1/teachers", params: { teacher: teacher_params }
 
     expect(response).to_not be_successful
     expect(response.status).to eq(400)

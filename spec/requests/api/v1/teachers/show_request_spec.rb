@@ -6,7 +6,7 @@ RSpec.describe 'Teachers show endpoint' do
     classroom = create(:classroom, :with_teachers)
     teacher_1 = classroom.teachers.first
 
-    get "/api/v1/classrooms/#{classroom.id}/teachers/#{teacher_1.id}"
+    get "/api/v1/teachers/#{teacher_1.id}"
     expect(response).to be_successful
 
     teacher = JSON.parse(response.body, symbolize_names: true)
@@ -41,9 +41,9 @@ RSpec.describe 'Teachers show endpoint' do
 
   it 'returns an error if item id is not valid' do
     classroom = Classroom.create!(name: "Class 1")
-    teacher_1 = create(:teacher, classroom_id: "#{classroom.id}", id: 1)
+    create(:teacher, classroom_id: "#{classroom.id}", id: 1)
 
-    get "/api/v1/classrooms/#{classroom.id}/teachers/2"
+    get "/api/v1/teachers/2"
 
     expect(response.status).to eq(400)
   end
