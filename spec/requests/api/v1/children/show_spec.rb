@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Classroom children Api requests' do
-  describe 'GET /api/v1/classrooms/:classroom_id/children/:id' do
+  describe 'GET /api/v1/children/:id' do
     context 'child exists' do
       it 'sends a specific child details' do
         classroom = create(:classroom)
         child = create(:child, classroom: classroom)
 
-        get "/api/v1/classrooms/#{classroom.id}/children/#{child.id}"
+        get "/api/v1/children/#{child.id}"
 
         expect(response).to have_http_status(200)
 
@@ -38,8 +38,8 @@ RSpec.describe 'Classroom children Api requests' do
 
     context 'child does NOT exist' do
       it 'sends a status code 404' do
-        classroom = create(:classroom)
-        get "/api/v1/classrooms/#{classroom.id}/children/123456"
+        create(:classroom)
+        get "/api/v1/children/123456"
 
         expect(response).to have_http_status(404)
         expect(response.body).to match(/Couldn't find Child/)
@@ -48,8 +48,8 @@ RSpec.describe 'Classroom children Api requests' do
 
     context 'invalid request' do
       it 'sends a status code 404' do
-        classroom = create(:classroom)
-        get "/api/v1/classrooms/#{classroom.id}/children/invalid"
+        create(:classroom)
+        get "/api/v1/children/invalid"
 
         expect(response).to have_http_status(404)
         expect(response.body).to match(/Couldn't find Child/)

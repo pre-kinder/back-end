@@ -72,7 +72,7 @@ RSpec.describe 'Parents Api requests' do
         post '/api/v1/parents', headers: headers, params: JSON.generate(parent: parent_params)
 
         expect(response).to have_http_status(422)
-        expect(response.body).to match(/Validation failed: Email has already been taken/)
+        expect(response.body).to match(/has already been taken/)
       end
     end
 
@@ -91,7 +91,7 @@ RSpec.describe 'Parents Api requests' do
         post '/api/v1/parents', headers: headers, params: JSON.generate(parent: parent_params)
 
         expect(response).to have_http_status(422)
-        expect(response.body).to match(/Validation failed: Last name can't be blank/)
+        expect(response.body).to match(/can't be blank/)
       end
     end
   end

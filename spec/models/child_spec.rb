@@ -4,6 +4,7 @@ RSpec.describe Child, type: :model do
   describe 'relationships' do
     it { should belong_to(:classroom) }
     it { should belong_to(:parent) }
+    it { should have_many(:attendances) }
   end
 
   describe 'validations' do

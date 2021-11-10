@@ -1,5 +1,6 @@
 class Teacher < ApplicationRecord
   belongs_to :classroom
+  has_many :children, through: :classroom
 
   validates :classroom_id, presence: true
   validates :first_name, presence: true

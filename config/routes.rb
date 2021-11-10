@@ -7,16 +7,10 @@ Rails.application.routes.draw do
       resources :parents do
         get '/children', to: 'parents#children'
       end
-
-
-      resources :classrooms, only: [:create, :show] do
-        resources :children
-        resources :teachers
-        resources :events
-        resources :attendances, shallow:true
-        # resources :attendances, only: [:index, :new, :create]
-      end
-      # resources :attendances, only: [:show, :edit, :update, :destroy]
+      resources :teachers
+      resources :children
+      resources :events
+      resources :classrooms, only: [:index, :create, :show]
     end
   end
 end

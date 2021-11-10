@@ -51,7 +51,6 @@ group :development, :test do
 end
 
 gem 'actionview-encoded_mail_to'
-gem 'sidekiq'
 gem 'redis-rails'
 
 group :development do
