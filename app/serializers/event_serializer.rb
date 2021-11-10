@@ -1,5 +1,5 @@
 class EventSerializer
-  inlude JSONAPI::Serializer
+  include JSONAPI::Serializer
 
   attributes :title, :description, :date, :time, :classroom_id
 end
