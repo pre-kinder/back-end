@@ -13,7 +13,10 @@ Rails.application.routes.draw do
         resources :children
         resources :teachers
         resources :events
+        resources :attendances, shallow:true
+        # resources :attendances, only: [:index, :new, :create]
       end
+      # resources :attendances, only: [:show, :edit, :update, :destroy]
     end
   end
 end
