@@ -21,4 +21,8 @@ class ApplicationController < ActionController::API
   def render_unprocessable_entity(message)
     json_response({ error: message }, :unprocessable_entity)
   end
+
+  def params_exist(param)
+    param.present?
+  end  
 end
