@@ -34,11 +34,11 @@ class Api::V1::ParentsController < ApplicationController
     head :no_content
   end
 
-  def children
-    parent = Parent.find(params[:parent_id])
-    all_children = parent.children
-    json_response(ChildrenSerializer.new(all_children))
-  end
+  # def children
+  #   parent = Parent.find(params[:parent_id])
+  #   all_children = parent.children
+  #   json_response(ChildrenSerializer.new(all_children))
+  # end
 
   def find
     if params_exist(params[:email])

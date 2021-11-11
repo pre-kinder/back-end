@@ -1,5 +1,10 @@
 class Api::V1::ClassroomsController < ApplicationController
 
+  def index
+    classes = Classroom.all
+    json_response(ClassroomSerializer.new(classes))
+  end
+
   def create
     classroom = Classroom.create!(classroom_params)
     json_response(ClassroomSerializer.new(classroom), :created)
