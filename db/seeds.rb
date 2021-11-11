@@ -15,9 +15,11 @@ Event.destroy_all
 Classroom.destroy_all
 Parent.destroy_all
 
-class1 = create(:classroom)
-class2 = create(:classroom)
-class3 = create(:classroom)
+
+class1 = create(name: "Zoom 1 Pintozzi Pumas")
+class2 = create(name: "Room 2 Chipmunks")
+class3 = create(name: "Room 3 Frogs")
+
 
 p_unit1 = create(:parent)
 p_unit2 = create(:parent)

@@ -14,6 +14,7 @@ gem 'json'
 gem 'jsonapi-serializer'
 gem 'figaro'
 gem 'pusher'
+gem 'factory_bot_rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
