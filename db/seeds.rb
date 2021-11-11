@@ -14,7 +14,7 @@ Classroom.destroy_all
 Parent.destroy_all
 
 
-class1 = Classroom.create(name: "Room 1 Badgers")
+class1 = Classroom.create(name: "Zoom 1 Pintozzi Pumas")
 class2 = Classroom.create(name: "Room 2 Chipmunks")
 class3 = Classroom.create(name: "Room 3 Frogs")
 

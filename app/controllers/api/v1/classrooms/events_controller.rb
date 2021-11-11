@@ -1,7 +1,7 @@
-class Api::V1::Events::EventsController < ApplicationController
+class Api::V1::Classrooms::EventsController < ApplicationController
   def index
-    class = Classroom.find(params[:id])
-    special_days = class.events
+    classroom = Classroom.find(params[:classroom_id].to_i)
+    special_days = classroom.events
     json_response(EventSerializer.new(special_days))
   end
 

@@ -1,7 +1,7 @@
 class Api::V1::Classrooms::TeachersController < ApplicationController
   def index
-    class = Classroom.find(params[:id])
-    instructors = class.teachers
+    classroom = Classroom.find(params[:classroom_id].to_i)
+    instructors = classroom.teachers
     json_response(TeacherSerializer.new(instructors))
   end
 
