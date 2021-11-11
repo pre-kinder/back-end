@@ -16,37 +16,37 @@ Classroom.destroy_all
 Parent.destroy_all
 
 
-class1 = Classroom.create(name: "Room 1 Pintozzi Pumas")
-class2 = Classroom.create(name: "Room 2 Chipmunks")
-class3 = Classroom.create(name: "Room 3 Frogs")
+class1 = Classroom.create!(name: "Room 1 Pintozzi Pumas")
+class2 = Classroom.create!(name: "Room 2 Chipmunks")
+class3 = Classroom.create!(name: "Room 3 Frogs")
 
-def generate_childre
-  20.times do |i|
-    children = Children.create!(
-      first_name { Faker::Name.first_name }
-      last_name { Faker::Name.last_name }
-      birthday { Faker::Date.birthday(min_age: 3, max_age: 5) }
-    )
-  end
-  children
-end
+# def generate_children
+#   20.times do |i|
+#     children = Children.create!(
+#       first_name { Faker::Name.first_name }
+#       last_name { Faker::Name.last_name }
+#       birthday { Faker::Date.birthday(min_age: 3, max_age: 5) }
+#     )
+#   end
+#   children
+# end
 
 
-p_unit1 = Parent.create(first_name: 'Lucy', last_name: 'Loo',
+p_unit1 = Parent.create!(first_name: 'Lucy', last_name: 'Loo',
                         phone_number: '123-455-6677',
                         address: "123 Main St Denver, CO 37278",
                         email: "lucy@gmail.com",
                         google_id: '27494238520',
                         google_image_url: '2368ihefndskzsaudfd89djfasf')
 
-p_unit2 = Parent.create(first_name: 'Dave', last_name: 'Doodle',
+p_unit2 = Parent.create!(first_name: 'Dave', last_name: 'Doodle',
                         phone_number: '362-348-3743',
                         address: "123 Main St Denver, CO 37278",
                         email: "dave@gmail.com",
                         google_id: '3829440344',
                         google_image_url: '2368ihefndskzsaudfd89djfasf')
 
-p_unit3 = Parent.create(first_name: 'Andy', last_name: 'Anty',
+p_unit3 = Parent.create!(first_name: 'Andy', last_name: 'Anty',
                         phone_number: '363-522-4523',
                         address: "123 Main St Denver, CO 37278",
                         email: "andy@gmail.com",
@@ -58,7 +58,7 @@ p_unit3 = Parent.create(first_name: 'Andy', last_name: 'Anty',
 # kid3 = create(:child, classroom: class2, parent: p_unit2)
 # kid4 = create(:child, classroom: class2, parent: p_unit3)
 
-teacher1 = Teacher.create(first_name: 'Amada', last_name: 'Aooooyooo',
+teacher1 = Teacher.create!(first_name: 'Amada', last_name: 'Aooooyooo',
                         phone_number: '327-433-4343',
                         address: "123 Main St Denver, CO 37278",
                         email: "amada@gmail.com",
@@ -66,7 +66,7 @@ teacher1 = Teacher.create(first_name: 'Amada', last_name: 'Aooooyooo',
                         google_image_url: '2368ihefndskzsaudfd89djfasf',
                         classroom: class1)
 
-teacher2 = Teacher.create(first_name: 'Betty', last_name: 'Tochihara',
+teacher2 = Teacher.create!(first_name: 'Betty', last_name: 'Tochihara',
                       phone_number: '362-238-2384',
                       address: "123 Main St Denver, CO 37278",
                       email: "betty@gmail.com",
@@ -74,7 +74,7 @@ teacher2 = Teacher.create(first_name: 'Betty', last_name: 'Tochihara',
                       google_image_url: '2368ihefndskzsaudfd89djfasf',
                       classroom: class2)
 
-teacher3 = Teacher.create(first_name: 'Henry', last_name: 'Howdy',
+teacher3 = Teacher.create!(first_name: 'Henry', last_name: 'Howdy',
                       phone_number: '632-344-3432',
                       address: "123 Main St Denver, CO 37278",
                       email: "henry@gmail.com",
