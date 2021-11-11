@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require "factory_bot_rails"
+# require "factory_bot_rails"
+FactoryBot::Syntax::Methods
 
 Child.destroy_all
 Teacher.destroy_all
@@ -19,7 +20,6 @@ Parent.destroy_all
 class1 = create(:classroom)
 class2 = create(:classroom)
 class3 = create(:classroom)
-
 
 p_unit1 = create(:parent)
 p_unit2 = create(:parent)
