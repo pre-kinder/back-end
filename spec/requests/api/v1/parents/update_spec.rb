@@ -20,7 +20,7 @@ RSpec.describe 'Parents API Requests' do
           patch "/api/v1/parents/#{parent.id}", headers: headers, params: JSON.generate(parent: parent_params)
 
           updated_parent = Parent.find(parent.id)
-
+          binding.pry
           expect(response).to have_http_status(202)
 
           expect(updated_parent.first_name).to eq(parent_params[:first_name])
