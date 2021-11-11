@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "factory_bot_rails"
+
 Child.destroy_all
 Teacher.destroy_all
 Event.destroy_all
@@ -14,26 +16,26 @@ Classroom.destroy_all
 Parent.destroy_all
 
 
-class1 = Classroom.create(name: "Zoom 1 Pintozzi Pumas")
-class2 = Classroom.create(name: "Room 2 Chipmunks")
-class3 = Classroom.create(name: "Room 3 Frogs")
+class1 = create(name: "Zoom 1 Pintozzi Pumas")
+class2 = create(name: "Room 2 Chipmunks")
+class3 = create(name: "Room 3 Frogs")
 
-p_unit1 = FactoryBot.create(:parent)
-p_unit2 = FactoryBot.create(:parent)
-p_unit3 = FactoryBot.create(:parent)
+p_unit1 = create(:parent)
+p_unit2 = create(:parent)
+p_unit3 = create(:parent)
 
-kid1 = FactoryBot.create(:child, classroom: class1, parent: p_unit1)
-kid2 = FactoryBot.create(:child, classroom: class1, parent: p_unit2)
-kid3 = FactoryBot.create(:child, classroom: class2, parent: p_unit2)
-kid4 = FactoryBot.create(:child, classroom: class2, parent: p_unit3)
+kid1 = create(:child, classroom: class1, parent: p_unit1)
+kid2 = create(:child, classroom: class1, parent: p_unit2)
+kid3 = create(:child, classroom: class2, parent: p_unit2)
+kid4 = create(:child, classroom: class2, parent: p_unit3)
 
-prof1 = FactoryBot.create(:teacher, classroom: class1)
-prof2 = FactoryBot.create(:teacher, classroom: class2)
-prof3 = FactoryBot.create(:teacher, classroom: class2)
+prof1 = create(:teacher, classroom: class1)
+prof2 = create(:teacher, classroom: class2)
+prof3 = create(:teacher, classroom: class2)
 
-occasion1 = FactoryBot.create(:event, classroom: class1)
-occasion2 = FactoryBot.create(:event, classroom: class2)
-occasion3 = FactoryBot.create(:event, classroom: class2)
+occasion1 = create(:event, classroom: class1)
+occasion2 = create(:event, classroom: class2)
+occasion3 = create(:event, classroom: class2)
 
 # post = create(:post, user: user)
 # class Seed
