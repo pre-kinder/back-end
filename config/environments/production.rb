@@ -59,7 +59,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.delivery_method = :smtp
-  host = 'pre-kinder.herokuapp.com'
+  host = 'prekinder-api.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
 
   #SMTP settings for gmail
@@ -67,7 +67,7 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :domain => 'heroku.com',
     :port => 587,
-    :user_name => "notification.prekinder",
+    :user_name => ENV['GOOGLE_USERNAME'],
     :password => ENV['GOOGLE_PASSWORD'],
     :authentication => "plain",
     :enable_starttls_auto => true

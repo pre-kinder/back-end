@@ -50,7 +50,7 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :domain => 'mail.google.com',
     :port => 587,
-    :user_name => "notification.prekinder",
+    :user_name => ENV['GOOGLE_USERNAME'],
     :password => ENV['GOOGLE_PASSWORD'],
     :authentication => "plain",
     :enable_starttls_auto => true
