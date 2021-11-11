@@ -22,13 +22,9 @@ RSpec.describe 'Attendances index endpoint' do
       expect(attendance).to have_key(:attributes)
       expect(attendance[:attributes]).to be_a(Hash)
 
-      expect(attendance[:attributes]).to have_key(:first_name)
-      expect(attendance[:attributes]).to have_key(:last_name)
-      expect(attendance[:attributes]).to have_key(:email)
-      expect(attendance[:attributes]).to have_key(:address)
-      expect(attendance[:attributes]).to have_key(:phone_number)
-      expect(attendance[:attributes]).to have_key(:google_image_url)
-      expect(attendance[:attributes]).to have_key(:google_id)
+      expect(attendance[:attributes]).to have_key(:date)
+      expect(attendance[:attributes]).to have_key(:notes)
+      expect(attendance[:attributes]).to have_key(:status)
 
       # teacher[:attributes].each do |teacher_attribute|
       #   expect(teacher[:attributes][:first_name]).to be_a(String)
