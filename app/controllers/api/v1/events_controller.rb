@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class Api::V1::EventsController < ApplicationController
   def index
     @events = Event.all
     json_response(EventSerializer.new(@events))
@@ -34,6 +34,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.permit(:title, :description, :date, :time, :classroom_id)
+    params.require(:classroom).permit(:title, :description, :date, :time, :classroom_id)
   end
 end

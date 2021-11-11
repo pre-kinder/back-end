@@ -5,7 +5,7 @@ FactoryBot.define do
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
     address { Faker::Address.full_address }
-    phone_number { Faker::PhoneNumber }
+    phone_number { Faker::PhoneNumber.cell_phone }
     google_image_url { Faker::LoremFlickr.image }
     google_id { Faker::Internet.username(specifier: 5..8) }
   end
