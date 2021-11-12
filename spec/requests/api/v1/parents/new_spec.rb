@@ -14,8 +14,16 @@ RSpec.describe 'Parents Api requests' do
           google_id: Faker::Alphanumeric.alphanumeric(number: 21)
         }
         # headers = { 'CONTENT_TYPE' => 'application/json' }
-
-        post '/api/v1/parents', body: parent_params
+        # post :create, params: { parent: parent_params }
+        post '/api/v1/parents', params: parent_params
+        #   first_name: Faker::Name.first_name,
+        #   last_name: Faker::Name.last_name,
+        #   email: Faker::Internet.email,
+        #   address: Faker::Address.full_address,
+        #   phone_number: Faker::PhoneNumber.cell_phone,
+        #   google_image_url: Faker::Avatar.image,
+        #   google_id: Faker::Alphanumeric.alphanumeric(number: 21)
+        # }
 
         # Faraday.post('localhost:5000/api/v1/parents', parent_params)
 
