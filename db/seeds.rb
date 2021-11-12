@@ -49,29 +49,29 @@ p_unit3 = Parent.create!(first_name: 'Andy', last_name: 'Anty',
 # kid3 = create(:child, classroom: class2, parent: p_unit2)
 # kid4 = create(:child, classroom: class2, parent: p_unit3)
 
-kid1 = Child.create!(
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Name.last_name,
-        birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class1, parent: p_unit1
-      )
-
-kid2 = Child.create!(
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Name.last_name,
-        birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class1, parent: p_unit2
-      )
-
-kid3 = Child.create!(
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Name.last_name,
-        birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class2, parent: p_unit2
-      )
-
-kid4 = Child.create!(
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Name.last_name,
-        birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class2, parent: p_unit3
-      )
+# kid1 = Child.create!(
+#         first_name: Faker::Name.first_name,
+#         last_name: Faker::Name.last_name,
+#         birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class1, parent: p_unit1
+#       )
+#
+# kid2 = Child.create!(
+#         first_name: Faker::Name.first_name,
+#         last_name: Faker::Name.last_name,
+#         birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class1, parent: p_unit2
+#       )
+#
+# kid3 = Child.create!(
+#         first_name: Faker::Name.first_name,
+#         last_name: Faker::Name.last_name,
+#         birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class2, parent: p_unit2
+#       )
+#
+# kid4 = Child.create!(
+#         first_name: Faker::Name.first_name,
+#         last_name: Faker::Name.last_name,
+#         birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class2, parent: p_unit3
+#       )
 
 
 
