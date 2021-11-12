@@ -9,7 +9,7 @@ RSpec.describe 'Classrooms Api requests' do
         }
         headers = { 'CONTENT_TYPE' => 'application/json' }
 
-        post '/api/v1/classrooms', headers: headers, params: JSON.generate(classroom: classroom_params)
+        post '/api/v1/classrooms', headers: headers, params: JSON.generate(classroom_params)
 
         created_classroom = Classroom.last
         expect(response).to have_http_status(201)

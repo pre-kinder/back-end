@@ -36,9 +36,9 @@ class Api::V1::ParentsController < ApplicationController
 
   private
 
-  def find_parent
-    @parent = Parent.find(params[:id])
-  end
+  # def find_parent
+  #   @parent = Parent.find(params[:id])
+  # end
 
   def parent_params
     params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
