@@ -29,9 +29,9 @@ class Api::V1::ChildrenController < ApplicationController
 
   private
 
-  def find_classroom
-    @classroom = Classroom.find(params[:classroom_id])
-  end
+  # def find_classroom
+  #   @classroom = Classroom.find(params[:classroom_id])
+  # end
 
   def find_child
     @child = Child.find(params[:id])

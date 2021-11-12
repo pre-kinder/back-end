@@ -51,6 +51,6 @@ class Api::V1::TeachersController < ApplicationController
   private
 
   def teacher_params
-    params.permit(:classroom_id, :first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
+    params.require(:teacher).permit(:classroom_id, :first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
   end
 end

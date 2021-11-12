@@ -34,12 +34,6 @@ class Api::V1::ParentsController < ApplicationController
     head :no_content
   end
 
-  # def children
-  #   parent = Parent.find(params[:parent_id])
-  #   all_children = parent.children
-  #   json_response(ChildrenSerializer.new(all_children))
-  # end
-
   def find
     if params_exist(params[:email])
       parent = Parent.search_email(params[:email])
@@ -52,13 +46,14 @@ class Api::V1::ParentsController < ApplicationController
     end
   end
 
+
   private
 
-  def find_parent
-    @parent = Parent.find(params[:id])
-  end
+  # def find_parent
+  #   @parent = Parent.find(params[:id])
+  # end
 
   def parent_params
-    params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_id)
+    params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_id, :google_image_url)
   end
 end
