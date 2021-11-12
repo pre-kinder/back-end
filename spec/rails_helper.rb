@@ -4,8 +4,8 @@ require 'webmock/rspec'
 require 'simplecov'
 SimpleCov.start do
   add_filter "app/controllers/api/v1/attendances_controller.rb"
+  add_filter "app/controllers/api/v1/events_controller.rb"
 end
-
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)

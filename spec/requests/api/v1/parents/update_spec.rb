@@ -17,7 +17,7 @@ RSpec.describe 'Parents API Requests' do
           }
           headers = { 'CONTENT_TYPE' => 'application/json' }
 
-          patch "/api/v1/parents/#{parent.id}", headers: headers, params: JSON.generate(parent: parent_params)
+          patch "/api/v1/parents/#{parent.id}", headers: headers, params: JSON.generate(parent_params)
 
           updated_parent = Parent.find(parent.id)
           # binding.pry
@@ -71,7 +71,7 @@ RSpec.describe 'Parents API Requests' do
           }
           headers = { 'CONTENT_TYPE' => 'application/json' }
 
-          patch "/api/v1/parents/#{parent.id}", headers: headers, params: JSON.generate(parent: parent_params)
+          patch "/api/v1/parents/#{parent.id}", headers: headers, params: JSON.generate(parent_params)
 
           updated_parent = Parent.find(parent.id)
 
@@ -97,7 +97,7 @@ RSpec.describe 'Parents API Requests' do
           }
           headers = { 'CONTENT_TYPE' => 'application/json' }
 
-          patch "/api/v1/parents/#{parent_1.id}", headers: headers, params: JSON.generate(parent: parent_params)
+          patch "/api/v1/parents/#{parent_1.id}", headers: headers, params: JSON.generate(parent_params)
 
           expect(Parent.find(parent_1.id).email).to eq(parent_1.email)
 
