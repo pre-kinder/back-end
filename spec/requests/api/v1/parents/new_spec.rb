@@ -27,6 +27,7 @@ RSpec.describe 'Parents Api requests' do
 
         # Faraday.post('localhost:5000/api/v1/parents', parent_params)
 
+
         created_parent = Parent.last
         expect(response).to have_http_status(201)
 
@@ -80,7 +81,7 @@ RSpec.describe 'Parents Api requests' do
         }
         headers = { 'CONTENT_TYPE' => 'application/json' }
 
-        post '/api/v1/parents', headers: headers, params: JSON.generate(parent: parent_params)
+        post '/api/v1/parents', headers: headers, params: JSON.generate(parent_params)
 
         expect(response).to have_http_status(422)
         expect(response.body).to match(/has already been taken/)
@@ -99,7 +100,7 @@ RSpec.describe 'Parents Api requests' do
         }
         headers = { 'CONTENT_TYPE' => 'application/json' }
 
-        post '/api/v1/parents', headers: headers, params: JSON.generate(parent: parent_params)
+        post '/api/v1/parents', headers: headers, params: JSON.generate(parent_params)
 
         expect(response).to have_http_status(422)
         expect(response.body).to match(/can't be blank/)
