@@ -19,7 +19,9 @@ http_interactions:
       message: OK
     headers:
       Date:
+
       - Thu, 11 Nov 2021 21:22:29 GMT
+
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -34,6 +36,7 @@ http_interactions:
       - HIT
       Age:
       - '12551'
+
       Last-Modified:
       - Thu, 11 Nov 2021 17:53:18 GMT
       Expect-Ct:
@@ -46,6 +49,7 @@ http_interactions:
       - cloudflare
       Cf-Ray:
       - 6aca93850cee55c0-DFW
+
       Alt-Svc:
       - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
         ma=86400
@@ -63,5 +67,6 @@ http_interactions:
         Day","name":"Labour Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]},{"date":"2022-10-10","localName":"Columbus
         Day","name":"Columbus Day","countryCode":"US","fixed":false,"global":false,"counties":["US-AL","US-AZ","US-CO","US-CT","US-DC","US-GA","US-ID","US-IL","US-IN","US-IA","US-KS","US-KY","US-LA","US-ME","US-MD","US-MA","US-MS","US-MO","US-MT","US-NE","US-NH","US-NJ","US-NM","US-NY","US-NC","US-OH","US-OK","US-PA","US-RI","US-SC","US-TN","US-UT","US-VA","US-WV"],"launchYear":null,"types":["Public"]},{"date":"2022-11-11","localName":"Veterans
         Day","name":"Veterans Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]}]'
+
   recorded_at: Thu, 11 Nov 2021 21:22:29 GMT
 recorded_with: VCR 6.0.0

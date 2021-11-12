@@ -36,6 +36,18 @@ class Api::V1::TeachersController < ApplicationController
     Teacher.delete(params[:id])
   end
 
+  def find
+    if params_exist(params[:email])
+      teacher = Teacher.search_email(params[:email])
+      render json: (teacher ? TeacherSerializer.new(teacher) : { data: {} })
+    elsif params_exist(params[:google_id])
+      teacher = Teacher.search_google_id(params[:google_id])
+      render json: (teacher ? TeacherSerializer.new(teacher) : { data: {} })
+    else
+      render_bad_request('valid teacher params not given')
+    end
+  end
+
   private
 
   def teacher_params

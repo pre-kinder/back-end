@@ -7,6 +7,7 @@ SimpleCov.start do
   add_filter "app/controllers/api/v1/events_controller.rb"
 end
 
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production

@@ -34,6 +34,19 @@ class Api::V1::ParentsController < ApplicationController
     head :no_content
   end
 
+  def find
+    if params_exist(params[:email])
+      parent = Parent.search_email(params[:email])
+      render json: (parent ? ParentSerializer.new(parent) : { data: {} })
+    elsif params_exist(params[:google_id])
+      parent = Parent.search_google_id(params[:google_id])
+      render json: (parent ? ParentSerializer.new(parent) : { data: {} })
+    else
+      render_bad_request('valid parent params not given')
+    end
+  end
+
+
   private
 
   # def find_parent
@@ -41,6 +54,6 @@ class Api::V1::ParentsController < ApplicationController
   # end
 
   def parent_params
-    params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_image_url, :google_id)
+    params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_id, :google_image_url)
   end
 end

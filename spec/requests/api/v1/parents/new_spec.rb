@@ -15,10 +15,15 @@ RSpec.describe 'Parents Api requests' do
         }
         headers = { 'CONTENT_TYPE' => 'application/json' }
 
+
         post '/api/v1/parents', headers: headers, params: JSON.generate(parent_params)
+
+        # Faraday.post('localhost:5000/api/v1/parents', parent_params)
+
 
         created_parent = Parent.last
         expect(response).to have_http_status(201)
+
         expect(created_parent.first_name).to eq(parent_params[:first_name])
         expect(created_parent.last_name).to eq(parent_params[:last_name])
         expect(created_parent.email).to eq(parent_params[:email])
