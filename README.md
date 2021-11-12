@@ -156,48 +156,10 @@
 <img src="https://user-images.githubusercontent.com/73204318/140886535-bf4918b4-b9d9-4ba1-9878-176684321523.png">
 
 
-## API Endpoints
-The following section displays the api endpoints.
+# API Endpoints
+## Find the endpoints for PreKinder [here](https://github.com/pre-kinder/back-end/wiki/Endpoints)
 
 </div>
-
-#### Holidays
-- GET /api/v1/holidays
-> Get the list of all holidays in the app
-
-#### Forecasts
-- GET /api/v1/forecasts
-> Get the list of all forecasts in the app
-
-#### Parents
-- GET /api/v1/parents
-> Get the list of all parents in the app
-
-- GET /api/v1/parents/:id
-> Get a parent details by id --
-> PATH PARAMETERS- :id (integer) REQUIRED
-
-- PATCH /api/v1/parents/:id
-> Update a section of a parents details by id --
-> PATH PARAMETERS- :id (integer) REQUIRED
-
-- PUT /api/v1/parents/:id
-> Update a parents details by id --
-> PATH PARAMETERS- :id (integer) REQUIRED
-
-- DELETE /api/v1/parents/:id
-> Remove a parent by id --
-> PATH PARAMETERS- :id (integer) REQUIRED
-
-- POST /api/v1/parents
-> Create a parent
-
-- GET /api/v1/parents/:id/children
-> Get the list of all children of a parents --
-> PATH PARAMETERS- :id (integer) REQUIRED
-
-
-## Acknowledgements
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
