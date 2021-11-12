@@ -58,6 +58,30 @@ p_unit3 = Parent.create!(first_name: 'Andy', last_name: 'Anty',
 # kid3 = create(:child, classroom: class2, parent: p_unit2)
 # kid4 = create(:child, classroom: class2, parent: p_unit3)
 
+kid1 = Child.create!(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class1, parent: p_unit1
+      )
+
+kid2 = Child.create!(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class1, parent: p_unit2
+      )
+
+kid3 = Child.create!(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class2, parent: p_unit2
+      )
+
+kid4 = Child.create!(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        birthday: Faker::Date.birthday(min_age: 3, max_age: 5), classroom: class2, parent: p_unit3
+      )
+
 teacher1 = Teacher.create!(first_name: 'Amada', last_name: 'Aooooyooo',
                         phone_number: '327-433-4343',
                         address: "123 Main St Denver, CO 37278",
@@ -85,14 +109,3 @@ teacher3 = Teacher.create!(first_name: 'Henry', last_name: 'Howdy',
 # occasion1 = create(:event, classroom: class1)
 # occasion2 = create(:event, classroom: class2)
 # occasion3 = create(:event, classroom: class2)
-
-# post = create(:post, user: user)
-# class Seed
-#   def self.start
-#     seed = Seed.new
-#     seed.generate_destinations
-#   end
-#
-
-#
-# Seed.start

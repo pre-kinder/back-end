@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 04 Nov 2021 17:47:37 GMT
+      - Fri, 12 Nov 2021 00:24:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,19 +33,19 @@ http_interactions:
       Cf-Cache-Status:
       - HIT
       Age:
-      - '857'
+      - '23457'
       Last-Modified:
-      - Thu, 04 Nov 2021 17:33:20 GMT
+      - Thu, 11 Nov 2021 17:53:18 GMT
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=cVLpDMPqDdR2r9vQVNwuzH%2B40WMO5CeScwy40W8NPVqIcznLSVuIB1yFEK6kOH7yJ%2FCcbQz%2FNld9n9rcM92lo54HRyRuhNReEaxM5qFxKExP9wgnpjNPqmY%2FuUEUGJIXi1gjhKWR9kdQYs87"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=mwy6Wf%2B4OZthDLOckDbq5ALPEFIQd06QVS9K19wApuFiQSokmk42EvVS3adBYUKdP323vMkQuTgfUjrKjU1KLkZighxH7tXZlICqGiVqSfcd4RpclPrhXVQM%2BMY%2FTjol"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 6a8fab24fdb86781-DFW
+      - 6acb9dc94d3c6790-DFW
       Alt-Svc:
       - h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443";
         ma=86400
@@ -61,6 +61,7 @@ http_interactions:
         Day","name":"Memorial Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]},{"date":"2022-06-20","localName":"Juneteenth","name":"Juneteenth","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":2021,"types":["Public"]},{"date":"2022-07-04","localName":"Independence
         Day","name":"Independence Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]},{"date":"2022-09-05","localName":"Labor
         Day","name":"Labour Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]},{"date":"2022-10-10","localName":"Columbus
-        Day","name":"Columbus Day","countryCode":"US","fixed":false,"global":false,"counties":["US-AL","US-AZ","US-CO","US-CT","US-DC","US-GA","US-ID","US-IL","US-IN","US-IA","US-KS","US-KY","US-LA","US-ME","US-MD","US-MA","US-MS","US-MO","US-MT","US-NE","US-NH","US-NJ","US-NM","US-NY","US-NC","US-OH","US-OK","US-PA","US-RI","US-SC","US-TN","US-UT","US-VA","US-WV"],"launchYear":null,"types":["Public"]}]'
-  recorded_at: Thu, 04 Nov 2021 17:47:37 GMT
+        Day","name":"Columbus Day","countryCode":"US","fixed":false,"global":false,"counties":["US-AL","US-AZ","US-CO","US-CT","US-DC","US-GA","US-ID","US-IL","US-IN","US-IA","US-KS","US-KY","US-LA","US-ME","US-MD","US-MA","US-MS","US-MO","US-MT","US-NE","US-NH","US-NJ","US-NM","US-NY","US-NC","US-OH","US-OK","US-PA","US-RI","US-SC","US-TN","US-UT","US-VA","US-WV"],"launchYear":null,"types":["Public"]},{"date":"2022-11-11","localName":"Veterans
+        Day","name":"Veterans Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]}]'
+  recorded_at: Fri, 12 Nov 2021 00:24:15 GMT
 recorded_with: VCR 6.0.0
