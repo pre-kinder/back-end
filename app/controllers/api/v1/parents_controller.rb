@@ -1,5 +1,4 @@
 class Api::V1::ParentsController < ApplicationController
-  # before_action :find_parent, only: [:show, :update, :destroy]
 
   def index
     parents = Parent.all
@@ -48,10 +47,6 @@ class Api::V1::ParentsController < ApplicationController
 
 
   private
-
-  # def find_parent
-  #   @parent = Parent.find(params[:id])
-  # end
 
   def parent_params
     params.permit(:first_name, :last_name, :email, :address, :phone_number, :google_id, :google_image_url)

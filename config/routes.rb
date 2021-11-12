@@ -7,19 +7,17 @@ Rails.application.routes.draw do
       get '/teachers/find', to: 'teachers#find'
 
       resources :parents do
+        # resources :children, only: [:index]
         get '/children', to: 'parents/children#index'
-        # get '/children', to: 'parents#children'
       end
 
       resources :teachers
       resources :children
-      resources :events
       resources :classrooms, only: [:index, :create, :show] do
         get '/children', to: 'classrooms/children#index'
         get '/teachers', to: 'classrooms/teachers#index'
-        get '/events', to: 'classrooms/events#index'
       end
-      resources :attendances, only: [:index, :create, :show]
+      resources :attendances, only: [:index]
     end
   end
 end
